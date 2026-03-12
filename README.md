@@ -44,6 +44,41 @@ Grafana visualizes metrics dashboards
 - monitoring/ → Prometheus and metrics setup
 - screenshots/ → Cluster and monitoring proof
 
+## System Architecture
+Developer
+   │
+   │ Build Docker Image
+   ▼
+Docker Image Registry
+   │
+   ▼
+Kubernetes Cluster
+   │
+   ├── Deployment
+   ├── Pods
+   ├── Service
+   │
+   ▼
+Application Pods
+   │
+   ▼
+Monitoring Stack
+   ├── Prometheus
+   └── Grafana
+
+  ## Repository Structure
+kubernetes-monitoring-project
+│
+├── kubernetes
+│   ├── deployment.yaml
+│   ├── service.yaml
+│   └── monitoring
+│
+├── docker
+│   └── Dockerfile
+│
+└── README.md
+
 ## Screenshots
 See screenshots folder for:
 - kubectl outputs
